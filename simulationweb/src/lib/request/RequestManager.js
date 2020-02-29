@@ -18,8 +18,7 @@ let error = {}
  */
 const getSingleData =  (url) => {
     return axios.get(url).then(res => {
-        const result = res.data.payload
-        return result
+         return res.data
     }).catch(() => {
         error = { error: message.AXIOS_ERROR_CALL_NO_DATA }
     })
@@ -49,8 +48,7 @@ const getDataList = (url) => {
 const postFormForSingleResult =  (urlrequest, form) => {
     form = (typeof form === 'undefined') ? 'default' : form
     return axios.post(urlrequest, form).then(res => {
-        const singleResult = res.data.payload
-        return singleResult
+        return res.data
     }).catch(() => {
         error = { error: message.AXIOS_ERROR_CALL_NO_DATA }
     })

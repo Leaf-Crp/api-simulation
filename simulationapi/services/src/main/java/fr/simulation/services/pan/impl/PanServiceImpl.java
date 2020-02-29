@@ -9,8 +9,6 @@ import fr.simulation.services.pan.IPanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class PanServiceImpl implements IPanService {
@@ -18,9 +16,13 @@ public class PanServiceImpl implements IPanService {
     @Autowired
     private IPanRepository panRepository;
 
-    public List<PanBean> getAllPan() {
-        List<Pan> panList = panRepository.findAll();
-        List<PanBean> allPan = panList.stream().map(PanBeanAdapter::transform).collect(Collectors.toList());
-        return allPan;
+    public PanBean getAllPan() {
+        return PanBeanAdapter.transform(panRepository.findAll().get(0));
+    }
+
+    public PanBean updatePan(String temperature) {
+        Pan pan = panRepository.findAll().get(0);
+        pan.setTemperature(temperature);
+        return PanBeanAdapter.transform(panRepository.save(pan));
     }
 }

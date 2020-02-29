@@ -38,7 +38,7 @@ public class RepositoryConfiguration {
   public EntityManagerFactory getEntityManagerFactory(DataSource dataSource) {
     LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
     entityManagerFactoryBean.setDataSource(dataSource);
-    entityManagerFactoryBean.setPackagesToScan("fr.oukonmange.data.entity");
+    entityManagerFactoryBean.setPackagesToScan("fr.simulation.data.entity");
     entityManagerFactoryBean.setPersistenceProviderClass(HibernatePersistenceProvider.class);
     Properties jpaProperties = new Properties();
     jpaProperties.setProperty("hibernate.show_sql", "true");

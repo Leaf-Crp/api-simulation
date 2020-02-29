@@ -76,13 +76,13 @@
                 <artifactId>maven-assembly-plugin</artifactId>
                 <executions>
                     <execution>
-                        <id>zip-oukonmange</id>
+                        <id>zip-simulation</id>
                         <phase>package</phase>
                         <goals>
                             <goal>single</goal>
                         </goals>
                         <configuration>
-                            <finalName>oukonmangeweb</finalName>
+                            <finalName>simulationweb</finalName>
                             <appendAssemblyId>false</appendAssemblyId>
                             <descriptors>
                                 <descriptor>assembly/sample.xml</descriptor>

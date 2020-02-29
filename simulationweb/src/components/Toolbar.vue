@@ -1,6 +1,6 @@
 <template>
    <v-app-bar>
-      <v-toolbar-title>OukonmangeApp</v-toolbar-title>
+      <v-toolbar-title>Simulationweb</v-toolbar-title>
       <v-spacer></v-spacer>
       <div>
          <v-tabs class="size">
