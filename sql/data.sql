@@ -1,0 +1,4 @@
+CREATE TABLE Pan(
+    id_pan INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    temperature INT NOT NULL
+);

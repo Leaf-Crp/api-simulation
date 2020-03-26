@@ -26,7 +26,7 @@
                      <span class="secondary--text">Température : {{pan.temperature}}°C</span>
                   </v-col>
                   <v-col>
-                     <v-btn color="dark_peach" class="white--text" @click="auto">Auto</v-btn>
+                     <v-btn color="dark_peach" class="white--text" @click="start">Start</v-btn>
                      <v-btn color="dark_peach" class="white--text ml-3" @click="save">Save</v-btn>
                   </v-col>
                </v-row>
@@ -58,6 +58,11 @@
                      </v-radio-group>
                   </v-col>
                </v-row>
+               <v-row justify="center">
+                  <v-col cols="6">
+                     <span class="display-2 secondary--text">Timer: {{ countDown }}</span>
+                  </v-col>
+               </v-row>
             </v-col>
          </v-row>
       </v-col>
@@ -73,6 +78,7 @@ export default {
    data: function () {
       return {
          mode: 'Viande',
+         countDown : 10,
          slider: 50,
          pseudo: '',
          password: '',
@@ -86,6 +92,17 @@ export default {
       this.connect()
    },
    methods: {
+      countDownTimer() {
+         if(this.countDown > 0) {
+            setTimeout(() => {
+               this.countDown -= 1
+               this.countDownTimer()
+            }, 1000)
+         }
+         if(this.countDown === 0) {
+            this.send('La cuisson est terminé ! Vous pouvez retirer vos légumes !')
+         }
+      },
       getPan() {
          RequestManager.getSingleData(RequestUri.ALL_PAN).then(result =>{
             if (result) {
@@ -93,9 +110,10 @@ export default {
             }
          })
       },
-      auto() {
-
-      },
+       start() {
+         this.countDown = 10
+         this.countDownTimer()
+       },
       save() {
          let temperature = {
             temperature: this.slider
