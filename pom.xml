@@ -47,7 +47,7 @@
         <!-- dependencies versions -->
         <java.version>1.8</java.version>
         <node.version>v10.10.0</node.version>
-        <spring.version>2.1.2.RELEASE</spring.version>
+        <spring.version>2.5.12</spring.version>
 
         <jackson-annotations.version>2.10.1</jackson-annotations.version>
         <hibernate-core.version>6.0.0.Alpha2</hibernate-core.version>
