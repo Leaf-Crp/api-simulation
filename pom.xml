@@ -52,7 +52,7 @@
         <jackson-annotations.version>2.10.1</jackson-annotations.version>
         <hibernate-core.version>6.0.0.Alpha2</hibernate-core.version>
         <javax.persistance-api.version>2.2</javax.persistance-api.version>
-        <mysql-connector-java.version>8.0.18</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
         <powermock.version>2.0.4</powermock.version>
         <pojo-tester.version>0.7.6</pojo-tester.version>
         <spring-test.version>2.5</spring-test.version>
